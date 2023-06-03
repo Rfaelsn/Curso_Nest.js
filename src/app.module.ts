@@ -5,9 +5,11 @@ import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { ThrottlerModule, ThrottlerGuard } from '@nestjs/throttler';
 import { APP_GUARD } from '@nestjs/core';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot(), //faz a config e da acesso as var de ambiente na api
     ThrottlerModule.forRoot({
       //ignoreUserAgents // para bloquear o acesso dealgum user agent à api
       // limit: 10000, // limite de consumo de recursos
