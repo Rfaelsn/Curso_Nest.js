@@ -31,7 +31,7 @@ export class AuthService {
           email: user.email,
         },
         {
-          expiresIn: '5 minutes', // tempo de expiração
+          expiresIn: '10 minutes', // tempo de expiração
           subject: String(user.id), //assunto do token
           issuer: this.issuer, //modulo emissor
           audience: this.audience, //destinaratio do token
